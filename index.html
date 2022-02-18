@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Change by Button Click</title>
+    <style>
+        #container{
+            height: 100vh;
+            width: 100vw;
+            background-color: brown;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+overflow:hiddden;
+        }
+        #button{
+            font-size: 23px;
+            font-weight: bold;
+            padding: 10px;
+            background-color: transparent;
+            border: 3px solid;
+            background-origin: padding-box;
+            border-radius: 10px;
+            box-sizing: border-box;
+            box-shadow: inset 2px ;
+            cursor: pointer;
+
+        }
+        h4{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div>
+        <button id="button">Click to Change Background</button>
+        
+        <h4 id="rgb"></h4>
+        </div>
+
+    </div>
+    <script>
+
+        
+        
+
+        let container= document.getElementById('container')
+        let button= document.getElementById('button')
+        let rgb= document.getElementById('rgb')
+        button.onclick = function(){
+
+            let color1 = Math.floor(Math.random() *255)
+        let color2 = Math.floor(Math.random() *255)
+        let color3 = Math.floor(Math.random() *255)
+
+            let background_color =`rgb(${color1},${color2},${color3})`
+            let font_back = `rgb(${color3},${color1} ,${color2})`
+            container.style.backgroundColor = background_color
+            button.style.backgroundColor =font_back
+            console.log(background_color)
+            rgb.textContent=`rgb(${color1},${color2},${color3})`
+        }
+
+    </script>
+    
+</body>
+</html>
